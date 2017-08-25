@@ -6,6 +6,7 @@
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="src.home"      value="${basedir}/src"/>
   <property name="web.home"      value="${basedir}/web"/>
+  <property name="jar.home"		value="${basedir}/jars"/>
 
   <target name="help">
     <echo>You can use the following targets:</echo>
@@ -32,6 +33,12 @@
     </fileset>
   </path>
 -->
+	  <path id="compile.classpath">
+	    <fileset dir="${jar.home}">
+	      <include name="*.jar"/>
+	    </fileset>
+	  </path>
+	
   <target name="all" depends="clean,compile,dist"
           description="Clean work dirs, then compile and create a WAR"/>
 
@@ -55,7 +62,7 @@
           description="Compile Java sources and copy to WEB-INF/classes dir">
     <javac srcdir="${src.home}"
           destdir="${work.home}/WEB-INF/classes">
-   <!--     <classpath refid="compile.classpath"/> -->
+        <classpath refid="compile.classpath"/> 
     </javac>
     <copy  todir="${work.home}/WEB-INF/classes">
       <fileset dir="${src.home}" excludes="**/*.java"/>
