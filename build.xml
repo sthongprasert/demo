@@ -1,7 +1,7 @@
 <project name="My Project" default="help" basedir=".">
   <!-- Define the properties used by the build -->
   <property name="app.name"      value="hello"/>
-  <property name="tcserver.home" value="C:\Users\sthongprasert\Desktop\EclipseWorkspace\ApacheTomcat9.0\apache-tomcat-9.0.0.M22-windows-x64\apache-tomcat-9.0.0.M22"/>
+  <property name="tcserver.home" value="/usr/share/tomcat8"/>
   <property name="work.home"    value="${basedir}/work"/>
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="src.home"      value="${basedir}/src"/>
